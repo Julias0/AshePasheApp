@@ -3,21 +3,21 @@
     <ion-grid>
       <ion-row>
         <ion-col class="ion-align-self-center sign-in--container">
-          <form class="sign-in--form">
+          <form class="sign-in--form" [formGroup]="fg" >
             <ion-item class="sign-in--form-element">
               <ion-label position="floating">
                 Email
               </ion-label>
-              <ion-input></ion-input>
+              <ion-input ngDefaultControl type="email" formControlName="email"></ion-input>
             </ion-item>
 
             <ion-item class="sign-in--form-element">
               <ion-label position="floating">
                 Password
               </ion-label>
-              <ion-input></ion-input>
+              <ion-input ngDefaultControl type="password" formControlName="password"></ion-input>
             </ion-item>
-            <ion-button class="sign-in--cta" color="primary">
+            <ion-button class="sign-in--cta" color="primary" (click)="signIn()">
               Sign In
             </ion-button>
             <div>
