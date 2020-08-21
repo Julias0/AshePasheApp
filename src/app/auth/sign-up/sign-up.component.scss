@@ -1,0 +1,23 @@
+.sign-up {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  &--container {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+  }
+  &--form {
+    max-width: 450px;
+    min-width: 360px;
+    text-align: center;
+    padding: 42px;
+    border: 1px solid lightblue;
+    border-radius: 4px;
+  }
+
+  &--cta {
+      margin: 16px;
+  }
+}

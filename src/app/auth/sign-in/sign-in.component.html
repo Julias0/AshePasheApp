@@ -1,0 +1,32 @@
+<ion-content>
+  <div class="sign-in">
+    <ion-grid>
+      <ion-row>
+        <ion-col class="ion-align-self-center sign-in--container">
+          <form class="sign-in--form">
+            <ion-item class="sign-in--form-element">
+              <ion-label position="floating">
+                Email
+              </ion-label>
+              <ion-input></ion-input>
+            </ion-item>
+
+            <ion-item class="sign-in--form-element">
+              <ion-label position="floating">
+                Password
+              </ion-label>
+              <ion-input></ion-input>
+            </ion-item>
+            <ion-button class="sign-in--cta" color="primary">
+              Sign In
+            </ion-button>
+            <div>
+              New to Ashe Pashe?
+              <a [routerLink]="['../sign-up']">Sign Up</a>
+            </div>
+          </form>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+</ion-content>
