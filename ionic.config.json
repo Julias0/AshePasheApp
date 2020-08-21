@@ -1,0 +1,7 @@
+{
+  "name": "ashePashe",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
