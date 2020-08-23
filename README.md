@@ -12,7 +12,9 @@
  - ng e2e
 
 Inside Sign In page, use creds - 
+
 email - adhar
+
 password - alooo
 
 e2e tests present for login page only
