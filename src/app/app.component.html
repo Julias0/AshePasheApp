@@ -2,13 +2,17 @@
   <ion-menu side="start" menuId="navigation" contentId="main">
     <ion-header>
       <ion-toolbar color="primary">
-        <ion-title>Start Menu</ion-title>
+        <ion-title>Ashe Pashe</ion-title>
       </ion-toolbar>
     </ion-header>
     <ion-content>
       <ion-list>
-        <ion-item>Dashboard</ion-item>
-        <ion-item>Profile</ion-item>
+        <ion-item class="menu--item" [routerLink]="['/', 'ashe-pashe', 'dashboard']">
+          <ion-label>
+            Dashboardaaa
+          </ion-label>
+        </ion-item>
+        <ion-item class="menu--item" [routerLink]="['/', 'ashe-pashe', 'profile']">Profile</ion-item>
       </ion-list>
     </ion-content>
   </ion-menu>

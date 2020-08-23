@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="navigation"></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Profile</ion-title>
+
+    <ion-buttons slot="secondary">
+      <ion-button>
+        <ion-icon slot="icon-only" name="person-circle-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-avatar>
+    <img class="profile--avatar" alt="persona image here" [src]="'https://robohash.org/'+currentUser.fullname">
+  </ion-avatar>
+  <div class="ion-padding">
+    Profile created on {{currentUser.createdAt | date: 'shortDate'}}
+  </div>
+  <div class="ion-padding">
+    <form [formGroup]="fg">
+      <ion-item class="profile--fullname">
+        <ion-label position="floating">
+          Full Name
+        </ion-label>
+        <ion-input id="profile-page-fullname" ngDefaultControl formControlName="fullname"></ion-input>
+      </ion-item>
+      <ion-item class="profile--email">
+        <ion-label position="floating">
+          Email
+        </ion-label>
+        <ion-input id="profile-page-email" ngDefaultControl formControlName="email"></ion-input>
+      </ion-item>
+      <div>
+        <ion-button (click)="save()">
+          Save
+        </ion-button>
+        <ion-button (click)="reset()" color="secondary">
+          Reset
+        </ion-button>
+      </div>
+    </form>
+  </div>
+</ion-content>

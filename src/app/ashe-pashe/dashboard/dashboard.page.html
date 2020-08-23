@@ -15,6 +15,20 @@
 
 <ion-content class="ion-padding">
   <h1>
-    Hello and welcome to your lovely dashboard!
+    Hello and welcome to your lovely dashboardeeeee!
   </h1>
+
+  <h4>
+    <div *ngIf="position">
+      <div>
+        Latitude: {{position.coords.latitude}}
+      </div>
+      <div>
+        Longitude: {{position.coords.longitude}}
+      </div>
+    </div>
+    <div *ngIf="!position">
+      Location is not available yet!
+    </div>
+  </h4>
 </ion-content>

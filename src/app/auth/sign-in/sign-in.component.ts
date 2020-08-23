@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MenuController, AlertController, ToastController } from '@ionic/angular';
 import { AuthService } from 'src/app/core/services/auth.service';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -11,7 +11,8 @@ import { Router } from '@angular/router';
 })
 export class SignInComponent implements OnInit {
 
-  protected fg: FormGroup;
+  fg: FormGroup;
+  message: string;
 
   constructor(
     private menuController: MenuController,
@@ -24,8 +25,8 @@ export class SignInComponent implements OnInit {
 
   ngOnInit() {
     this.fg = this.formBuidler.group({
-      email: [''],
-      password: ['']
+      email: ['', Validators.required],
+      password: ['', Validators.required]
     });
 
     if (this.authService.isAuthenticated()) {
@@ -38,8 +39,6 @@ export class SignInComponent implements OnInit {
   }
 
   signIn() {
-    console.log('Sign in clicked');
-    console.log(this.fg.value);
     this.authService.signIn(this.fg.value.email, this.fg.value.password).then(valid => {
       if (valid) {
         this.toastController.create({
@@ -54,11 +53,12 @@ export class SignInComponent implements OnInit {
           ]);
         });
       } else {
+        this.message = 'You made some mistake! Shame Shame';
         this.toastController.create({
           message: 'You made some mistake! Shame Shame',
         }).then(alert => {
           return alert.present();
-        })
+        });
       }
     });
   }

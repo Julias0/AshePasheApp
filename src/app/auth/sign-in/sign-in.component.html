@@ -8,18 +8,21 @@
               <ion-label position="floating">
                 Email
               </ion-label>
-              <ion-input ngDefaultControl type="email" formControlName="email"></ion-input>
+              <ion-input id="sign-in-email" ngDefaultControl type="email" formControlName="email"></ion-input>
             </ion-item>
 
             <ion-item class="sign-in--form-element">
               <ion-label position="floating">
                 Password
               </ion-label>
-              <ion-input ngDefaultControl type="password" formControlName="password"></ion-input>
+              <ion-input id="sign-in-password" ngDefaultControl type="password" formControlName="password"></ion-input>
             </ion-item>
             <ion-button class="sign-in--cta" color="primary" (click)="signIn()">
               Sign In
             </ion-button>
+            <div *ngIf="message" id="sign-in-message">
+              {{message}}
+            </div>
             <div>
               New to Ashe Pashe?
               <a [routerLink]="['../sign-up']">Sign Up</a>
