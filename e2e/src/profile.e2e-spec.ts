@@ -1,5 +1,5 @@
 import { browser, element, by, ExpectedConditions } from 'protractor';
-import { protractor } from 'protractor/built/ptor';
+import { Helpers } from './helpers';
 
 describe('Ashe Pashe App - ', () => {
   describe('profile page', () => {
@@ -42,14 +42,19 @@ describe('Ashe Pashe App - ', () => {
     });
 
     it('reset works properly', async () => {
-      await element(by.css('#profile-page-fullname > input')).clear();
-      await element(by.css('#profile-page-fullname > input')).sendKeys('qwjeioqwjeiqje');
+      await browser.wait(ExpectedConditions.visibilityOf(element(by.id('profile-page-fullname'))), 3000);
 
-      await element(by.css('#profile-page-email > input')).clear();
-      await element(by.css('#profile-page-email > input')).sendKeys('alsdkalsdk');
+      await element(by.id('menu-title')).click();
 
-      expect(await element(by.css('#profile-page-fullname > input')).getAttribute('value')).toBe('qwjeioqwjeiqje');
-      expect(await element(by.css('#profile-page-email > input')).getAttribute('value')).toBe('alsdkalsdk');
+      await Helpers.clearIonInput(element(by.css('#profile-page-fullname > input')));
+
+      await element(by.css('#profile-page-fullname > input')).sendKeys('aaaa');
+      expect(await element(by.css('#profile-page-fullname > input')).getAttribute('value')).toBe('aaaa');
+
+      await Helpers.clearIonInput(element(by.css('#profile-page-email > input')));
+
+      await element(by.css('#profile-page-email > input')).sendKeys('bbbb');
+      expect(await element(by.css('#profile-page-email > input')).getAttribute('value')).toBe('bbbb');
 
       await element(by.id('profile-page-reset')).click();
 
