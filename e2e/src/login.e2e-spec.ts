@@ -1,7 +1,7 @@
 // import { AppPage } from './app.po';
 import { browser, by, element, ExpectedConditions } from 'protractor';
 
-describe('new App', () => {
+describe('Ashe Pashe App -', () => {
 
   beforeEach(() => {
   });
