@@ -31,4 +31,11 @@
       Location is not available yet!
     </div>
   </h4>
+
+  <ion-button id="dashboard-camera" *ngIf="isCameraAvailable" (click)="takeAPhoto()">Take a Picture!</ion-button>
+  <img id="dashboard-camera-preview" *ngIf="isCameraAvailable" [src]="image" alt="no photo taken yet!">
+  
+  <h4 *ngIf="!isCameraAvailable">
+    Camera is not available in this platform!
+  </h4>
 </ion-content>

@@ -7,6 +7,7 @@ import { IonicModule } from '@ionic/angular';
 import { DashboardPageRoutingModule } from './dashboard-routing.module';
 
 import { DashboardPage } from './dashboard.page';
+import { SMS } from '@ionic-native/sms/ngx';
 
 @NgModule({
   imports: [
@@ -14,6 +15,9 @@ import { DashboardPage } from './dashboard.page';
     FormsModule,
     IonicModule,
     DashboardPageRoutingModule
+  ],
+  providers: [
+    SMS
   ],
   declarations: [DashboardPage]
 })
