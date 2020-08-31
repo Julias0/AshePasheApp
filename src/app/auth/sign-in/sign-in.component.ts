@@ -3,6 +3,12 @@ import { MenuController, AlertController, ToastController } from '@ionic/angular
 import { AuthService } from 'src/app/core/services/auth.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import {
+  Plugins,
+  PushNotification,
+  PushNotificationToken,
+  PushNotificationActionPerformed } from '@capacitor/core';
+const { PushNotifications } = Plugins;
 
 @Component({
   selector: 'app-sign-in',
@@ -36,6 +42,20 @@ export class SignInComponent implements OnInit {
         'dashboard'
       ]);
     }
+    console.log('Initializing PushNotifications');
+
+    // Request permission to use push notifications
+    // iOS will prompt user and return if they granted permission or not
+    // Android will just grant without prompting
+    PushNotifications.requestPermission().then( result => {
+      if (result.granted) {
+        // Register with Apple / Google to receive push via APNS/FCM
+        PushNotifications.register();
+      } else {
+        // Show some error
+      }
+    });
+
   }
 
   signIn() {
