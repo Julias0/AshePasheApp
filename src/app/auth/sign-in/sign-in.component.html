@@ -20,6 +20,9 @@
             <ion-button class="sign-in--cta" color="primary" (click)="signIn()">
               Sign In
             </ion-button>
+            <ion-button (click)="signInSaml()">
+              Saml
+            </ion-button>
             <div *ngIf="message" id="sign-in-message">
               {{message}}
             </div>
