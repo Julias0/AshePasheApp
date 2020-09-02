@@ -9,8 +9,14 @@
       "launchShowDuration": 0
     },
     "PushNotifications": {
-      "presentationOptions": ["badge", "sound"]
+      "presentationOptions": [
+        "badge",
+        "sound"
+      ]
     }
   },
-  "cordova": {}
+  "cordova": {},
+  "server": {
+    "url": "http://192.168.1.3:8100"
+  }
 }
