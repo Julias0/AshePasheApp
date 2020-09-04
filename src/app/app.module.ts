@@ -10,6 +10,7 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
+import { GooglePlus } from '@ionic-native/google-plus/ngx';
 
 @NgModule({
   declarations: [AppComponent],
@@ -23,7 +24,8 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
     StatusBar,
     SplashScreen,
     { provide: RouteReuseStrategy, useClass: IonicRouteStrategy },
-    InAppBrowser
+    InAppBrowser,
+    GooglePlus
   ],
   bootstrap: [AppComponent]
 })
