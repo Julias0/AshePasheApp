@@ -3,28 +3,25 @@
     <ion-grid>
       <ion-row>
         <ion-col class="ion-align-self-center sign-up--container">
-          <!-- <form class="sign-up--form">
+          <form class="sign-up--form" [formGroup]="myGroup">
             <ion-item class="sign-up--form-element">
               <ion-label position="floating">
                 Email
               </ion-label>
-              <ion-input></ion-input>
+              <ion-input id="sign-up-email" ngDefaultControl type="email" formControlName="email"></ion-input>
             </ion-item>
-
-            <ion-item class="sign-up--form-element">
-              <ion-label position="floating">
-                Password
-              </ion-label>
-              <ion-input></ion-input>
-            </ion-item>
-            <ion-button class="sign-up--cta" color="primary">
-              Sign Up
+            <ion-button class="sign-up--cta" color="primary" (click)="saml()">
+              SAML
             </ion-button>
+            <br>
+            domain -> {{domain}}
+            <br>
+            refresh token -> {{refreshToken}}
             <div>
               Already on Ashe Pashe?
               <a [routerLink]="['../sign-in']">Sign In</a>
             </div>
-          </form> -->
+          </form>
         </ion-col>
       </ion-row>
     </ion-grid>
