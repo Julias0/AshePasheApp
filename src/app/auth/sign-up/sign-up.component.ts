@@ -60,12 +60,13 @@ export class SignUpComponent implements OnInit {
   };
 
   google() {
-    this.googlePlus.logout().then(res => {
+    // this.googlePlus.logout().then(res => {
       var clientId = '536552269544-e52f8gbrjt074iklku8okb15rq4f7ipk.apps.googleusercontent.com';
       this.googlePlus.login({
         webClientId: clientId,
         offline: false
       }).then(res => {
+        this.googlePlus.logout();
         console.log(res);
         this.authService.googleLogin(res.accessToken).then(data => {
           console.log(data);
@@ -80,7 +81,7 @@ export class SignUpComponent implements OnInit {
       }).catch(err => {
         console.error(err)
       });
-    });
+    // });
     
   }
 
