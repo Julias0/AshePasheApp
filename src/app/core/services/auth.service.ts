@@ -62,5 +62,13 @@ export class AuthService {
       })
   }
 
+  async googleLogin(data): Promise<any> {
+    return this.postData('https://accounts.staging.fyle.in/routerapi/auth/google/signin', {access_token: data})
+      .then(data => {
+        console.log(data);
+        return data
+      })
+  }
+
   
 }

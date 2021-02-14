@@ -19,3 +19,6 @@ password - alooo
 
 e2e tests present for login page only
 unit tests present for profile page component and bunch of others
+
+add REVERSED_CLIENT_ID in xcode->info-> url types, REVERSED_CLIENT_ID is present in googlesevice.plist file
+https://github.com/EddyVerbruggen/cordova-plugin-googleplus/issues/613
